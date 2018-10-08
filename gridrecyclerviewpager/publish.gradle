@@ -1,0 +1,22 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'com.hieupt'
+version = '1.0.0'
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    configurations = ['archives']
+    pkg {
+        repo = 'utilities'
+        name = 'grid-recycler-view-pager'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://hieupham1993@bitbucket.org/hieupham1993/grid-view-pager.git'
+        version {
+            name = '1.0.0'
+            desc = 'Grid Recycler View with paging using ViewPager'
+            released = new Date()
+        }
+    }
+}
